@@ -5,13 +5,13 @@ app.use(express.json());
 
 const VERIFICATION_TOKEN = "verify1234567890abcdefghijklmnopqrstuvwxyz12";
 
-app.post('/account-deletion-webhook', (req, res) => {
-  console.log('Received eBay verification POST:', req.body);
+app.get('/account-deletion-webhook', (req, res) => {
+  console.log('Received eBay verification GET');
   res.status(200).send(VERIFICATION_TOKEN);
 });
 
-app.get('/account-deletion-webhook', (req, res) => {
-  console.log('Received eBay verification GET');
+app.post('/account-deletion-webhook', (req, res) => {
+  console.log('Received eBay verification POST:', req.body);
   res.status(200).send(VERIFICATION_TOKEN);
 });
 
